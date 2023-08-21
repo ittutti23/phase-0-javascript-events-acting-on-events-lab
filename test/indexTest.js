@@ -22,25 +22,25 @@ describe('moveDodgerLeft()', () => {
   })
 })
 
-describe('moveDodgerRight()', () => {
+describe('moveDodgerLeft()', () => {
   beforeEach(() => {
     dodger = document.getElementById('dodger')
   })
 
-  it('moves the DODGER to the right', () => {
+  it('moves the DODGER to the left', () => {
     let left = dodger.style.left
     left = parseInt(left)
 
-    moveDodgerRight()
+    moveDodgerLeft()
 
     let newPosition = dodger.style.left
     newPosition = parseInt(newPosition)
-    
-    if (left < 360){
-      expect(newPosition).to.be.above(left)
-    } else{
+
+    if (left > 0){
+      expect(newPosition).to.be.below(left)
+    } else {
       expect(newPosition).to.equal(left)
     }
-    
   })
 })
+
